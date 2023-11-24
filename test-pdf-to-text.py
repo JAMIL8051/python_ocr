@@ -19,6 +19,7 @@ def get_tesseract_executable_path():
         return None
 
 
+# Get JPG file path from user
 def get_file_path():
     root = tk.Tk()
     root.withdraw()  # Hide the main window
@@ -39,7 +40,7 @@ android_file_path = get_file_path()
 
 if android_file_path.lower().endswith('.jpg'):
     text = pytesseract.image_to_string(Image.open(android_file_path))
-    print(text)
+    #print(text)
     extracted_text = text
 else:
     print("Please provide a valid JPG file path.")
